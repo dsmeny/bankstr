@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actions } from "../store";
 
@@ -12,7 +12,6 @@ const Transaction = () => {
   const { pathname } = useLocation();
   const pName = statefullPathName(modiPathName(pathname));
 
-  const store = useSelector((state) => state.account);
   const dispatch = useDispatch();
   const { withdraw, deposit } = bindActionCreators(actions, dispatch);
 
